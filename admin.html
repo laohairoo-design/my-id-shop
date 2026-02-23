@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดการแอดมิน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 p-6">
+    <div id="admin-login" class="max-w-sm mx-auto bg-white p-8 rounded-3xl shadow-xl mt-20 text-center">
+        <h2 class="font-black mb-6">ADMIN LOGIN</h2>
+        <input id="admin-pass" type="password" placeholder="รหัสผ่าน" class="w-full p-4 border rounded-2xl mb-4 text-center">
+        <button onclick="if(document.getElementById('admin-pass').value==='1234'){document.getElementById('admin-main').style.display='block';document.getElementById('admin-login').style.display='none'}else{alert('รหัสผิด')}" class="w-full bg-black text-white p-4 rounded-2xl font-bold">เข้าสู่ระบบ</button>
+    </div>
+
+    <div id="admin-main" style="display:none;" class="max-w-md mx-auto">
+        <div class="bg-white p-6 rounded-3xl shadow-md border-2 border-green-500 mb-6">
+            <h3 class="font-black mb-4 text-green-600">เติมเงินลูกค้า</h3>
+            <input id="search-user" type="text" placeholder="ชื่อเล่นลูกค้า" class="w-full p-4 border rounded-2xl mb-2 font-bold">
+            <input id="topup-amount" type="number" placeholder="จำนวนเงิน" class="w-full p-4 border rounded-2xl mb-4 font-bold">
+            <button onclick="adminTopup()" class="w-full bg-green-500 text-white p-4 rounded-2xl font-black text-lg">เติมเงินทันที</button>
+        </div>
+        <button onclick="location.href='post.html'" class="w-full bg-blue-600 text-white p-4 rounded-2xl font-black mb-2">ไปหน้าลงขายไอดี</button>
+        <button onclick="location.href='index.html'" class="w-full text-slate-400 font-bold">กลับหน้าหลัก</button>
+    </div>
+    <script type="module" src="app.js"></script>
+    <script>
+        // ฟังก์ชันเติมเงินพิเศษ
+        window.adminTopup = async () => {
+            const name = document.getElementById('search-user').value.trim();
+            const amount = parseInt(document.getElementById('topup-amount').value);
+            // บีต้องใช้โค้ดใน app.js เชื่อมต่อตรงนี้ด้วย
+            alert('กำลังดำเนินการ...');
+        }
+    </script>
+</body>
+</html>
