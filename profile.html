@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ของฉัน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#0f172a] text-white" style="font-family: 'Kanit', sans-serif;">
+    <nav class="p-6 border-b border-white/5 flex justify-between items-center">
+        <button onclick="location.href='index.html'" class="font-bold text-yellow-500">← กลับหน้าแรก</button>
+        <button onclick="localStorage.removeItem('customer_name'); location.href='index.html';" class="text-red-400 text-xs">ออกจากระบบ</button>
+    </nav>
+    <main class="max-w-xl mx-auto p-6">
+        <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-[2.5rem] p-8 mb-8 border border-white/10 shadow-2xl">
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1">ยินดีต้อนรับ</p>
+            <h2 id="prof-name" class="text-2xl font-black italic mb-4">---</h2>
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest mb-1">ยอดเงินคงเหลือ</p>
+            <h2 id="prof-balance" class="text-4xl font-black text-yellow-500">฿ 0</h2>
+        </div>
+        <h3 class="font-black italic mb-4 uppercase text-slate-400">🎁 ไอดีที่ซื้อไปแล้ว</h3>
+        <div id="purchased-list" class="space-y-4 text-black"></div>
+    </main>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
